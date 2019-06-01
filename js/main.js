@@ -13,16 +13,21 @@
   function draw() {
     let x;
     let y;
+    let offset = 2;
     let size = Math.floor(stage.width / dim);
     for (x = 0; x < dim; x++) {
       for (y = 0; y < dim; y++) {
-        ctx.fillStyle = 'rgba(255, 0, 0, ' + Math.random() + ')';
+        if (answer[0] === x && answer[1] === y) {
+          ctx.fillStyle = 'skyblue';
+        } else {
+          ctx.fillStyle = 'lightblue';
+        }
         ctx.fillRect(
           // 0, 50, 100, ...
-          size * x,
-          size * y,
-          size,
-          size
+          size * x + offset,
+          size * y + offset,
+          size - offset * 2,
+          size - offset * 2
         );
         ctx.fillStyle = '#000';
         ctx.textBaseline = 'top';
