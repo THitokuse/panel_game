@@ -5,6 +5,10 @@
 
   let ctx;
   let dim = 5;
+  let answer = [
+    Math.floor(Math.random() * dim),
+    Math.floor(Math.random() * dim)
+  ];
 
   function draw() {
     let x;
@@ -19,7 +23,10 @@
           size * y,
           size,
           size
-        )
+        );
+        ctx.fillStyle = '#000';
+        ctx.textBaseline = 'top';
+        ctx.fillText(x + ', ' + y, size * x, size * y);
       }
     }
   }
